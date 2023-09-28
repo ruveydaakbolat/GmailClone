@@ -1,0 +1,294 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+.between, main .top .right, main .top, header .right, header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.icon, aside img, main .top i, header .right i {
+  width: 35px;
+  height: 35px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.icon:hover, aside img:hover, main .top i:hover, header .right i:hover {
+  background: #d8dbdd;
+}
+
+.modal-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.529);
+  width: 100%;
+  height: 100%;
+  display: none;
+  place-items: center;
+}
+
+.modal {
+  background: white;
+  width: 80%;
+  max-width: 700px;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+}
+.modal input {
+  border: none;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.712);
+  padding: 10px;
+  margin: 0 6px;
+  outline: none;
+}
+.modal textarea {
+  width: 100%;
+  height: 100%;
+  border: none;
+  resize: none;
+  outline: none;
+  padding: 16px;
+  font-family: "roboto";
+  border-radius: 10px;
+}
+.modal #send {
+  width: 140px;
+  border: none;
+  padding: 14px;
+  border-radius: 50px;
+  background: #1b61d1;
+  color: white;
+  margin: 10px;
+  cursor: pointer;
+}
+.modal #send:hover {
+  background: #0353d3;
+}
+
+.modal .header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background: rgb(190, 191, 192);
+  border-radius: 10px 10px 0 0;
+  font-size: 20px;
+}
+.modal .header button {
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.modal .header button:hover {
+  background: gray;
+  color: white;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "roboto";
+  background: #f6f8fc;
+}
+
+header {
+  padding: 20px;
+  gap: 20px;
+  font-size: 21px;
+}
+header .left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+header .left i {
+  font-size: 29px;
+}
+header .left img {
+  width: 50px;
+  margin-left: 10px;
+}
+header .middle form {
+  display: flex;
+  background: rgb(243, 243, 243);
+  padding: 6px 9px;
+  gap: 10px;
+  border-radius: 10px;
+}
+header .middle form input {
+  border: none;
+  outline: none;
+  font-size: 18px;
+  background: transparent;
+}
+@media (max-width: 750px) {
+  header .middle {
+    display: none;
+  }
+}
+header .right {
+  gap: 15px;
+}
+header .right img {
+  border-radius: 50%;
+  height: 36px;
+  width: 36px;
+}
+
+section {
+  display: flex;
+  gap: 20px;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  gap: 40px;
+}
+nav .create {
+  background: #d0ebff;
+  border-radius: 15px;
+  padding: 10px;
+  display: flex;
+  gap: 20px;
+  cursor: pointer;
+  transition: box-shadow 0.3s;
+}
+nav .create:hover {
+  box-shadow: 2px 2px 10px gray;
+}
+nav ul {
+  display: grid;
+  font-size: 16px;
+}
+nav ul li {
+  padding: 8px;
+  margin-left: 4px;
+  display: flex;
+  gap: 12px;
+  border-radius: 0 20px 20px 0;
+  cursor: pointer;
+}
+nav ul li:hover {
+  background: #d0ebff;
+}
+nav ul li i,
+nav ul li span {
+  pointer-events: none;
+}
+nav .active {
+  background: #d0ebff;
+}
+nav .bottom {
+  margin-left: 8px;
+  gap: 5px;
+}
+
+.hide span {
+  display: none;
+}
+
+main {
+  flex-grow: 1;
+}
+main .top {
+  background: white;
+  border-radius: 10px 10px 0 0;
+  padding: 8px 16px;
+}
+main .top .left {
+  display: flex;
+  gap: 10px;
+}
+main .top .right {
+  gap: 10px;
+}
+main .mails {
+  height: 80vh;
+  background: #e9ecef;
+}
+
+.mail {
+  display: grid;
+  align-items: center;
+  justify-content: space-between;
+  grid-template-columns: 1fr 3fr 1fr;
+  font-size: 16px;
+  padding: 10px;
+  border-bottom: 1px solid white;
+  -moz-column-gap: 5px;
+       column-gap: 5px;
+}
+.mail:hover {
+  box-shadow: 0 0 30px rgba(128, 128, 128, 0.408);
+}
+.mail .info {
+  display: flex;
+  gap: 6px;
+}
+.mail .content {
+  display: flex;
+}
+.mail .content .title {
+  font-weight: bold;
+}
+.mail .content .title,
+.mail .content .text {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.mail .time {
+  text-align: end;
+  white-space: nowrap;
+}
+.mail #delete {
+  display: none;
+  border: none;
+  font-size: 15px;
+  background: none;
+  cursor: pointer;
+  text-align: end;
+}
+.mail:hover > .time {
+  display: none;
+}
+.mail:hover > #delete {
+  display: block;
+}
+
+aside {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  padding: 20px;
+}
+aside span {
+  background: #495057;
+  width: 100%;
+  height: 2px;
+}
+aside img {
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+}
+@media (max-width: 750px) {
+  aside {
+    display: none;
+  }
+}/*# sourceMappingURL=style.css.map */
