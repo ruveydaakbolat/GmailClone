@@ -187,6 +187,23 @@ main {
     text-align: end;
     white-space: nowrap;
   }
+
+  #delete {
+    display: none;
+    border: none;
+    background: none;
+    font-size: 15px;
+    cursor: pointer;
+    text-align: end;
+  }
+
+  &:hover > .time {
+    display: none;
+  }
+
+  &:hover > #delete {
+    display: block;
+  }
 }
 
 aside {

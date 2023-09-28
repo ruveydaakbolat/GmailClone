@@ -1,4 +1,5 @@
 import { categories, mailData } from "./scripts/constants.js";
+import { getDate } from "./scripts/helpers.js";
 import {
   renderCategories,
   ele,
@@ -41,7 +42,7 @@ ele.modalForm.addEventListener("submit", (e) => {
       reciever,
       title,
       message,
-      date: "23 Eylül",
+      date: getDate(),
     };
 
     mailData.unshift(newMail);

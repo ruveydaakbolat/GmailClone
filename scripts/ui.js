@@ -4,10 +4,9 @@ export const ele = {
   nav: document.querySelector("nav"),
   mailsArea: document.querySelector(".mails"),
   createBtn: document.querySelector(".create"),
-  closeBtn: document.querySelector('.close-modal'),
+  closeBtn: document.querySelector(".close-modal"),
   modal: document.querySelector(".modal-wrapper"),
-  modalForm: document.querySelector(".modal-wrapper form")
-  
+  modalForm: document.querySelector(".modal-wrapper form"),
 };
 
 export function renderCategories(data, active) {
@@ -43,6 +42,8 @@ export function renderMails(mailData) {
         <p class="text">${mail.message.slice(0, 35) + "..."}</p>
     </div>
     <p class="time">${mail.date}</p>
+
+    <button id="delete">Sil</button>
   </div>
   `
   );
