@@ -1,4 +1,4 @@
-import { month_tr } from './constants.js';
+import { month_tr } from "./constants.js";
 
 export function getDate() {
   const date = new Date();
@@ -6,5 +6,5 @@ export function getDate() {
   const day = date.getDate();
   const monthIndex = date.getMonth();
 
-  return day + ' ' + month_tr[monthIndex];
+  return day + " " + month_tr[monthIndex];
 }

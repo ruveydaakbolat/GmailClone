@@ -182,25 +182,21 @@ main {
       overflow: hidden;
     }
   }
-
   .time {
     text-align: end;
     white-space: nowrap;
   }
-
   #delete {
     display: none;
     border: none;
-    background: none;
     font-size: 15px;
+    background: none;
     cursor: pointer;
     text-align: end;
   }
-
   &:hover > .time {
     display: none;
   }
-
   &:hover > #delete {
     display: block;
   }

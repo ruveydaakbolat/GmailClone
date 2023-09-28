@@ -255,6 +255,20 @@ main .mails {
   text-align: end;
   white-space: nowrap;
 }
+.mail #delete {
+  display: none;
+  border: none;
+  font-size: 15px;
+  background: none;
+  cursor: pointer;
+  text-align: end;
+}
+.mail:hover > .time {
+  display: none;
+}
+.mail:hover > #delete {
+  display: block;
+}
 
 aside {
   display: flex;

@@ -43,7 +43,10 @@ export function renderMails(mailData) {
     </div>
     <p class="time">${mail.date}</p>
 
+    
     <button id="delete">Sil</button>
+    
+    
   </div>
   `
   );
