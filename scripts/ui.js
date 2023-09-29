@@ -31,10 +31,10 @@ export function renderMails(mailData) {
 
   const html = mailData.map(
     (mail) => `
-  <div class="mail">
+  <div data-id="${mail.id}" class="mail">
     <div class="info">
         <input type="checkbox" />
-        <i class="bi bi-star-fill"></i>
+        <i id="star" class="bi ${mail.starred ? "bi-star-fill" : "bi-star"}"></i>
         <b>${mail.sender}</b>
     </div>
     <div class="content">

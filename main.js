@@ -1,4 +1,4 @@
-import { categories, mailData } from "./scripts/constants.js";
+import { categories } from "./scripts/constants.js";
 import { getDate } from "./scripts/helpers.js";
 import {
   renderCategories,
@@ -6,6 +6,9 @@ import {
   renderMails,
   toggleModal,
 } from "./scripts/ui.js";
+
+const strData = localStorage.getItem("MAILS");
+let mailData = JSON.parse(strData);
 
 document.addEventListener("DOMContentLoaded", () => {
   renderCategories(categories, "Gelen Kutusu");
@@ -51,6 +54,40 @@ ele.modalForm.addEventListener("submit", (e) => {
 
     localStorage.setItem("MAILS", strData);
 
+    toggleModal(false);
+
     renderMails(mailData);
   }
 });
+
+ele.mailsArea.addEventListener("click", updateMail);
+
+function updateMail(e) {
+  const mail = e.target.parentElement;
+  const id = mail.dataset.id;
+
+  if (
+    e.target.id === "delete" &&
+    window.confirm("Maili silmek istiyor musunuz?")
+  ) {
+    const filtred = mailData.filter((i) => i.id !== Number(id));
+
+    localStorage.setItem("MAILS", JSON.stringify(filtred));
+
+    mail.remove();
+  }
+
+  if (e.target.id === "star") {
+    const like_id = Number(mail.parentElement.dataset.id);
+
+    const found = mailData.find((i) => i.id === Number(like_id));
+
+    const updated = { ...found, starred: !found.starred };
+
+    mailData = mailData.map((mail) => (mail.id === like_id ? updated : mail));
+
+    localStorage.setItem("MAILS", JSON.stringify(mailData));
+
+    renderMails(mailData);
+  }
+}
