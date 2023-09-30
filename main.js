@@ -7,8 +7,9 @@ import {
   toggleModal,
 } from "./scripts/ui.js";
 
+let mailData = [];
 const strData = localStorage.getItem("MAILS");
-let mailData = JSON.parse(strData);
+mailData = JSON.parse(strData);
 
 document.addEventListener("DOMContentLoaded", () => {
   renderCategories(categories, "Gelen Kutusu");
@@ -72,7 +73,9 @@ function updateMail(e) {
   ) {
     const filtred = mailData.filter((i) => i.id !== Number(id));
 
-    localStorage.setItem("MAILS", JSON.stringify(filtred));
+    mailData = filtred;
+
+    localStorage.setItem("MAILS", JSON.stringify(mailData));
 
     mail.remove();
   }
