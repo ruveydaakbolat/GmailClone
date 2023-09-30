@@ -8,8 +8,10 @@ import {
 } from "./scripts/ui.js";
 
 let mailData = [];
-const strData = localStorage.getItem("MAILS");
-mailData = JSON.parse(strData);
+//const strData = localStorage.getItem("MAILS");
+// console.log({strData});
+//mailData = JSON.parse(strData);
+mailData = localStorage.getItem("MAILS") ? Object.values(JSON.parse(localStorage.getItem("MAILS"))) : [];
 
 document.addEventListener("DOMContentLoaded", () => {
   renderCategories(categories, "Gelen Kutusu");
@@ -32,6 +34,8 @@ ele.closeBtn.addEventListener("click", () => toggleModal(false));
 
 ele.modalForm.addEventListener("submit", (e) => {
   e.preventDefault();
+
+  console.log(typeof mailData);
 
   const reciever = e.target[1].value;
   const title = e.target[2].value;
